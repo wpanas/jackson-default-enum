@@ -23,6 +23,9 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
 }
 
 tasks.test {

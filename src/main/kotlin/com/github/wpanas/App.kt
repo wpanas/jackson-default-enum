@@ -1,6 +1,8 @@
 package com.github.wpanas
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue
+import com.fasterxml.jackson.annotation.JsonSetter
+import com.fasterxml.jackson.annotation.Nulls
 import com.fasterxml.jackson.databind.DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE
 import com.fasterxml.jackson.module.kotlin.jacksonMapperBuilder
 import com.fasterxml.jackson.module.kotlin.readValue
@@ -18,7 +20,7 @@ object App {
 	}
 }
 
-data class Pixel(val color: Color)
+data class Pixel(@JsonSetter(nulls = Nulls.AS_EMPTY) val color: Color = Color.UNKNOWN)
 
 enum class Color {
 	RED, GREEN, BLUE,
